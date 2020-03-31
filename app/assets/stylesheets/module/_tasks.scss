@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+}
+
+$gray: #cccccc;
+$red: #FF3366;
+$black: rgba(19, 18, 18, 0.795);
+
+.header{
+  height: 50px;
+  width: 100%;
+  box-shadow: 0 0 4px rgb(236, 236, 236);
+  display: flex;
+  justify-content: space-between;
+  &__current-user{
+    padding: 10px;
+    .user-icon{
+      color: $gray;
+      font-size: 30px;
+      margin-left: 10px;
+      float: left;
+    }
+    .user-name{
+      color: $red;
+      font-size: 18px;
+      margin: 5px 0 0 5px;
+      float: right;
+    }
+  }
+  &__cog-btn{
+    .cog-icon{
+      color: $gray;
+      font-size: 20px;
+      margin: 15px; 
+    }
+  }
+}
+
+.side-bar{
+  height: calc(100vh - 50px);
+  width: 250px;
+  box-shadow: 2px 2px 4px rgb(236, 236, 236);
+  float: left;
+  position: relative;
+  .item-block{
+    margin: 25px;
+    .item-link{
+      text-decoration: none;
+      .item-icon{
+        font-size: 5px;
+        display: inline;
+        margin-right: 10px;
+      }
+      .item-text{
+        font-size: 14px;
+        display: inline;
+        color: $black;
+      }
+    }
+  }
+  .additem-button{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 2px 2px 4px 2px rgb(236, 236, 236);
+    position: absolute;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    &__button{
+      color: $red;
+    }
+  }
+  .additem-page{
+    height: 200px;
+    width: 100px;
+    margin: auto;
+    background-color: gray;
+    z-index: 2;
+    position:fixed;
+  }
+  .item-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 1;
+  }
+}
+
+.main-task{
+  height: calc(100vh - 50px);
+  width: calc(100vw - 250px);
+  background-color: rgb(240, 240, 240);
+  float: right;
+  padding: 0 15px 15px 15px;
+  &__record{
+    border-radius: 10px;
+    height: 70px;
+    width: calc(100vw - 280px);
+    background-color: white;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding-top: 10px;
+    @mixin font{
+      .count{
+        margin-left: 30px;
+        font-size: 30px;
+        color: $red;
+      }
+      .letter{
+        font-size: 12px;
+        color: $gray;
+      }
+    }
+    .incomplete-task{
+      @include font
+    }
+    .complete-task{
+      @include font
+    }
+  }
+  &__form{
+    border-radius: 10px;
+    height: 40px;
+    width: calc(100vw - 280px);
+    background-color: white;
+    color: $gray;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 14px;
+  }
+  .item-name{
+    font-size: 18px;
+    color: $black;
+    margin: 15px 0;
+  }
+  &__task-list{
+    border-radius: 10px;
+    height: 40px;
+    width: calc(100vw - 280px);
+    background-color: white;
+    margin-top: 5px;
+    display: flex;
+    padding: 10px;
+    label{
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      span{
+        display: inline-block;
+        background-color: transparent;
+        width: 19px;
+        height: 19px;
+        transform-origin: center;
+        position: relative;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78,-1.22,.17,1.89);
+        &:before{
+          content: "";
+          width: 0px;
+          height: 2px;
+          border-radius: 2px;
+          background: $gray;
+          position: absolute;
+          transform: rotate(45deg);
+          top: 8px;
+          left: 5px;
+          transition: width 50ms ease 50ms;
+          transform-origin: 0% 0%;
+        }
+        &:after{
+          content: "";
+          width: 0;
+          height: 2px;
+          border-radius: 2px;
+          background: $gray;
+          position: absolute;
+          transform: rotate(305deg);
+          top: 12px;
+          left: 6px;
+          transition: width 50ms ease;
+          transform-origin: 0% 0%;
+        }
+      }
+      &:hover{
+        span{
+          &:before {
+            width: 5px;
+            transition: width 100ms ease;
+          }
+          &:after {
+            width: 10px;
+            transition: width 150ms ease 100ms;
+          }
+        }
+      }
+    }
+    .checkbox{
+      display: none;
+    }
+    .text{
+      margin-left: 10px;
+      color: $black;
+    }
+    .date{
+      margin-left: 1040px;
+      color: $gray;
+      font-size: 14px;
+    }
+  }
+  .display-switching{
+    height: 20px;
+    width: 180px;
+    background-color: rgb(216, 216, 216);
+    border-radius: 10px;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    margin: 15px 0 15px 500px;
+  }
+}

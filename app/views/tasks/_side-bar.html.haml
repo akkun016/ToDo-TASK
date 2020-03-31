@@ -1,0 +1,19 @@
+.side-bar
+  .item-block
+    -# -items.each do |item|
+    =link_to "#",class: "item-link" do
+      =icon('fa', 'circle', class: "item-icon")
+  .item-block
+    =link_to "#",class: "item-link" do
+      =icon('fa', 'circle', class: "item-icon")
+      .item-text
+        project
+  %button.additem-button
+    %label.additem-button__button
+      =icon('fa', 'plus')
+      プロジェクトを追加する
+  .additem-page
+    project追加
+    =link_to "#", class: "page-close" do
+      キャンセル
+  .item-overlay

@@ -1,0 +1,35 @@
+.main-task
+  %ul.main-task__record
+    %li.incomplete-task
+      .count
+      .letter
+        未完了タスク
+    %li.complete-task
+      .count
+        0
+      .letter
+        完了済タスク
+  .main-task__form
+    -# = form_for [@item, @task] do |f|
+    -#   = f.text_field :text, class: "text-fom", placeholder: "追加したいタスクを入力してください"
+      
+  .item-name
+    project
+  .main-task__task-list
+    %input.checkbox{:type => "checkbox", :id => "check", :name => "check"}
+    %label(for="check")
+      %span
+    .text
+      hoge
+    .date
+      3/24
+  .main-task__task-list
+    %input.checkbox{:type => "checkbox", :id => "check", :name => "check"}
+    %label(for="check")
+      %span
+    .text
+      hoge
+    .date
+      3/24
+  .display-switching
+    完了済タスクの表示
