@@ -75,12 +75,16 @@ $black: rgba(19, 18, 18, 0.795);
     }
   }
   .additem-page{
-    height: 200px;
-    width: 100px;
+    display: none;
+    height: 300px;
+    width: 330px;
+    border-radius: 10px;
     margin: auto;
-    background-color: gray;
+    background-color: white;
     z-index: 2;
     position:fixed;
+    left: 570px;
+    top: 200px;
   }
   .item-overlay{
     display: none;
@@ -89,7 +93,7 @@ $black: rgba(19, 18, 18, 0.795);
     left: 0;
     height: 120%;
     width: 100%;
-    background-color: rgba(0,0,0,0.75);
+    background-color: rgba(0,0,0,0.3);
     z-index: 1;
   }
 }
@@ -128,14 +132,17 @@ $black: rgba(19, 18, 18, 0.795);
     }
   }
   &__form{
-    border-radius: 10px;
-    height: 40px;
-    width: calc(100vw - 280px);
-    background-color: white;
-    color: $gray;
-    line-height: 40px;
-    padding-left: 10px;
-    font-size: 14px;
+    .text-form{
+      border-radius: 10px;
+      height: 40px;
+      width: calc(100vw - 280px);
+      background-color: white;
+      line-height: 40px;
+      padding-left: 10px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+    }
   }
   .item-name{
     font-size: 18px;
@@ -226,6 +233,6 @@ $black: rgba(19, 18, 18, 0.795);
     font-size: 12px;
     line-height: 20px;
     text-align: center;
-    margin: 15px 0 15px 500px;
+    margin: 20px auto;
   }
 }

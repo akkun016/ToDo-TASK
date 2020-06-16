@@ -2,6 +2,7 @@
   %ul.main-task__record
     %li.incomplete-task
       .count
+        0
       .letter
         未完了タスク
     %li.complete-task
@@ -9,10 +10,11 @@
         0
       .letter
         完了済タスク
-  .main-task__form
+  %form.main-task__form
     -# = form_for [@item, @task] do |f|
     -#   = f.text_field :text, class: "text-fom", placeholder: "追加したいタスクを入力してください"
-      
+    %input.text-form{:type => "text", :placeholder => "追加するタスクを入力してください"}
+
   .item-name
     project
   .main-task__task-list

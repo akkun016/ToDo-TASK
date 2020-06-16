@@ -1,6 +1,5 @@
 .side-bar
   .item-block
-    -# -items.each do |item|
     =link_to "#",class: "item-link" do
       =icon('fa', 'circle', class: "item-icon")
   .item-block
@@ -13,7 +12,9 @@
       =icon('fa', 'plus')
       プロジェクトを追加する
   .additem-page
-    project追加
-    =link_to "#", class: "page-close" do
+    %p project追加
+    =form_with url: "#", local: true do |f|
+      =f.submit 'はい', class: "additem-submit"
+    %button{class: "cancel-btn"}
       キャンセル
   .item-overlay
